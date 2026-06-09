@@ -1,5 +1,7 @@
 # aislinnyang
 
+**中文** · [English](README.en.md)
+
 我的个人网站 [aislinnyang.com](https://aislinnyang.com) 的源码，加上我日常在用的一些 Agent Skills，开源出来。
 
 [![aislinnyang.com 首页](docs/home.png)](https://aislinnyang.com)
