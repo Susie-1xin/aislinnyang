@@ -10,7 +10,7 @@
 
 中文 · [English](README.en.md)
 
-<a href="https://aislinnyang.com"><img src="docs/home.png" width="760" alt="aislinnyang.com 首页"></a>
+<a href="https://aislinnyang.com"><img src="assets/home.png" width="760" alt="aislinnyang.com 首页"></a>
 
 </div>
 
