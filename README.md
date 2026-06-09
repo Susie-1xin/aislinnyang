@@ -18,7 +18,7 @@
 
 我不是工程师，是做增长的。这个站纯手写 HTML / CSS / JS，靠 Claude Code "vibe coding" 糊出来、丢在 Cloudflare Pages 上，能跑就行。真正想分享的是 `skills/` 里那些我天天用来做增长的小工具。
 
-## 📁 目录结构
+## 目录结构
 
 ```
 aislinnyang/
@@ -33,7 +33,7 @@ aislinnyang/
 └── skills/     # Agent Skills 集合（整理中）
 ```
 
-## 🚀 本地预览
+## 本地预览
 
 `site/` 是纯静态站，随便起个静态服务器就能看：
 
@@ -45,11 +45,11 @@ python3 -m http.server 8000
 
 部署用的是 Cloudflare（`site/wrangler.jsonc`）。
 
-## 🧰 Skills
+## Skills
 
 `skills/` 目录收录我自己每天在用的 Agent Skills，遵循 [Agent Skills 开放标准](https://docs.claude.com/en/docs/claude-code/skills)，可以在 Claude Code 等 Agent 里直接加载。这部分还在整理，详见 [`skills/README.md`](skills/README.md)。
 
-## 📄 License
+## License
 
 [MIT](LICENSE) · 自由使用 / 修改 / 再分发。网站里的文字、照片和个人内容版权归我所有，代码结构随便拿去参考。
 

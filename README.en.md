@@ -18,7 +18,7 @@
 
 I'm not an engineer, I do growth. This site is hand-written HTML / CSS / JS, held together with Claude Code "vibe-coding" and parked on Cloudflare Pages. It works, that's the bar. The part I actually want to share is `skills/`: the little tools I use every day to do growth.
 
-## 📁 Layout
+## Layout
 
 ```
 aislinnyang/
@@ -33,7 +33,7 @@ aislinnyang/
 └── skills/     # Agent Skills collection (work in progress)
 ```
 
-## 🚀 Run the site locally
+## Run the site locally
 
 `site/` is a plain static site, so any static server works:
 
@@ -45,11 +45,11 @@ python3 -m http.server 8000
 
 Deployment is on Cloudflare (`site/wrangler.jsonc`).
 
-## 🧰 Skills
+## Skills
 
 `skills/` collects the Agent Skills I use every day, following the [Agent Skills open standard](https://docs.claude.com/en/docs/claude-code/skills) so they load directly in Claude Code and other agents. Still being tidied up, see [`skills/README.md`](skills/README.md).
 
-## 📄 License
+## License
 
 [MIT](LICENSE) · free to use / modify / redistribute. The writing, photos, and personal content on the site are mine; the code and structure are yours to learn from.
 
