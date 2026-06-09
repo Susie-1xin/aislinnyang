@@ -1,14 +1,25 @@
-# aislinnyang
+<div align="center">
 
-[中文](README.md) · **English**
+# 🌻 aislinnyang.com
 
-Source code for my personal site [aislinnyang.com](https://aislinnyang.com), plus a few of the Agent Skills I use day to day, open-sourced.
+**Source for my personal site + the Agent Skills I use day to day**
 
-[![aislinnyang.com homepage](docs/home.png)](https://aislinnyang.com)
+[![Live](https://img.shields.io/badge/live-aislinnyang.com-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://aislinnyang.com)
+[![Built with Claude Code](https://img.shields.io/badge/built%20with-Claude%20Code-D97757?style=flat-square&logo=anthropic&logoColor=white)](https://claude.com/claude-code)
+[![Stack](https://img.shields.io/badge/stack-HTML%20·%20CSS%20·%20JS-4B5563?style=flat-square)](#)
+[![License: MIT](https://img.shields.io/badge/license-MIT-111111?style=flat-square)](LICENSE)
 
-The site isn't an achievement showcase. It tries to answer one question: **what is this person actually like, in real life and at work?** How she thinks, what she's building, what she's overthinking, what kind of life she's trying to build. The stack is light: hand-written HTML / CSS / JS, deployed on Cloudflare Pages, mostly "vibe-coded" with Claude Code.
+[中文](README.md) · English
 
-## Layout
+<a href="https://aislinnyang.com"><img src="docs/home.png" width="760" alt="aislinnyang.com homepage"></a>
+
+</div>
+
+> The site isn't an achievement showcase. It tries to answer one question: **what is this person actually like, in real life and at work?** How she thinks, what she's building, what she's overthinking, what kind of life she's trying to build.
+
+The stack is light: hand-written HTML / CSS / JS, deployed on Cloudflare Pages, mostly "vibe-coded" with Claude Code.
+
+## 📁 Layout
 
 ```
 aislinnyang/
@@ -23,7 +34,7 @@ aislinnyang/
 └── skills/     # Agent Skills collection (work in progress)
 ```
 
-## Run the site locally
+## 🚀 Run the site locally
 
 `site/` is a plain static site, so any static server works:
 
@@ -35,14 +46,18 @@ python3 -m http.server 8000
 
 Deployment is on Cloudflare (`site/wrangler.jsonc`).
 
-## Skills
+## 🧰 Skills
 
 `skills/` collects the Agent Skills I use every day, following the [Agent Skills open standard](https://docs.claude.com/en/docs/claude-code/skills) so they load directly in Claude Code and other agents. Still being tidied up, see [`skills/README.md`](skills/README.md).
 
-## License
+## 📄 License
 
 [MIT](LICENSE) · free to use / modify / redistribute. The writing, photos, and personal content on the site are mine; the code and structure are yours to learn from.
 
 ---
 
-By [Yixin Yang (Aislinn)](https://aislinnyang.com) · growth for AI products · going global · occasionally vibe-coding.
+<div align="center">
+
+By [**Yixin Yang (Aislinn)**](https://aislinnyang.com) · growth for AI products · going global · occasionally vibe-coding 🌻
+
+</div>

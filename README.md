@@ -1,14 +1,25 @@
-# aislinnyang
+<div align="center">
 
-**中文** · [English](README.en.md)
+# 🌻 aislinnyang.com
 
-我的个人网站 [aislinnyang.com](https://aislinnyang.com) 的源码，加上我日常在用的一些 Agent Skills，开源出来。
+**我的个人网站源码 + 日常在用的 Agent Skills 集合**
 
-[![aislinnyang.com 首页](docs/home.png)](https://aislinnyang.com)
+[![Live](https://img.shields.io/badge/live-aislinnyang.com-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://aislinnyang.com)
+[![Built with Claude Code](https://img.shields.io/badge/built%20with-Claude%20Code-D97757?style=flat-square&logo=anthropic&logoColor=white)](https://claude.com/claude-code)
+[![Stack](https://img.shields.io/badge/stack-HTML%20·%20CSS%20·%20JS-4B5563?style=flat-square)](#)
+[![License: MIT](https://img.shields.io/badge/license-MIT-111111?style=flat-square)](LICENSE)
 
-网站不是一个成就展示页，它想回答的是：**这个人在生活里、在工作中，到底是什么样子。** 怎么想事情、在做什么、在纠结什么、想过成什么样的生活。技术栈很轻：纯手写 HTML / CSS / JS，部署在 Cloudflare Pages，大部分是用 Claude Code "vibe coding" 出来的。
+中文 · [English](README.en.md)
 
-## 目录结构
+<a href="https://aislinnyang.com"><img src="docs/home.png" width="760" alt="aislinnyang.com 首页"></a>
+
+</div>
+
+> 网站不是一个成就展示页。它想回答的是：**这个人在生活里、在工作中，到底是什么样子。** 怎么想事情、在做什么、在纠结什么、想过成什么样的生活。
+
+技术栈很轻：纯手写 HTML / CSS / JS，部署在 Cloudflare Pages，大部分是用 Claude Code "vibe coding" 出来的。
+
+## 📁 目录结构
 
 ```
 aislinnyang/
@@ -23,7 +34,7 @@ aislinnyang/
 └── skills/     # Agent Skills 集合（整理中）
 ```
 
-## 网站本地预览
+## 🚀 本地预览
 
 `site/` 是纯静态站，随便起个静态服务器就能看：
 
@@ -35,14 +46,18 @@ python3 -m http.server 8000
 
 部署用的是 Cloudflare（`site/wrangler.jsonc`）。
 
-## Skills
+## 🧰 Skills
 
 `skills/` 目录收录我自己每天在用的 Agent Skills，遵循 [Agent Skills 开放标准](https://docs.claude.com/en/docs/claude-code/skills)，可以在 Claude Code 等 Agent 里直接加载。这部分还在整理，详见 [`skills/README.md`](skills/README.md)。
 
-## License
+## 📄 License
 
 [MIT](LICENSE) · 自由使用 / 修改 / 再分发。网站里的文字、照片和个人内容版权归我所有，代码结构随便拿去参考。
 
 ---
 
-By [Yixin Yang (Aislinn)](https://aislinnyang.com) · 做 AI 产品增长 / 出海 / 偶尔 vibe coding。
+<div align="center">
+
+By [**Yixin Yang (Aislinn)**](https://aislinnyang.com) · 做 AI 产品增长 / 出海 / 偶尔 vibe coding 🌻
+
+</div>
