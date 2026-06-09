@@ -2,11 +2,10 @@
 
 # 🌻 aislinnyang.com
 
-**Source for my personal site + the Agent Skills I use day to day**
+**An AI-growth person's personal site + the Agent Skills she uses every day, open-sourced**
 
 [![Live](https://img.shields.io/badge/live-aislinnyang.com-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://aislinnyang.com)
 [![Built with Claude Code](https://img.shields.io/badge/built%20with-Claude%20Code-D97757?style=flat-square&logo=anthropic&logoColor=white)](https://claude.com/claude-code)
-[![Stack](https://img.shields.io/badge/stack-HTML%20·%20CSS%20·%20JS-4B5563?style=flat-square)](#)
 [![License: MIT](https://img.shields.io/badge/license-MIT-111111?style=flat-square)](LICENSE)
 
 [中文](README.md) · English
@@ -17,7 +16,7 @@
 
 > The site isn't an achievement showcase. It tries to answer one question: **what is this person actually like, in real life and at work?** How she thinks, what she's building, what she's overthinking, what kind of life she's trying to build.
 
-The stack is light: hand-written HTML / CSS / JS, deployed on Cloudflare Pages, mostly "vibe-coded" with Claude Code.
+I'm not an engineer, I do growth. This site is hand-written HTML / CSS / JS, held together with Claude Code "vibe-coding" and parked on Cloudflare Pages. It works, that's the bar. The part I actually want to share is `skills/`: the little tools I use every day to do growth.
 
 ## 📁 Layout
 
