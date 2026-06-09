@@ -2,6 +2,8 @@
 
 我的个人网站 [aislinnyang.com](https://aislinnyang.com) 的源码，加上我日常在用的一些 Agent Skills，开源出来。
 
+[![aislinnyang.com 首页](docs/home.png)](https://aislinnyang.com)
+
 网站不是一个成就展示页，它想回答的是：**这个人在生活里、在工作中，到底是什么样子。** 怎么想事情、在做什么、在纠结什么、想过成什么样的生活。技术栈很轻：纯手写 HTML / CSS / JS，部署在 Cloudflare Pages，大部分是用 Claude Code "vibe coding" 出来的。
 
 ## 目录结构
