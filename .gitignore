@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# editor / tooling
+.vscode/
+.idea/
+
+# node (in case skills or site add tooling later)
+node_modules/
+
+# local env / secrets
+.env*
+!.env.example
+.dev.vars*
+
+# local-only post sources, image backups
+site/posts/
+_originals/
+.venv-cut/

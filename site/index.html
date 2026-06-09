@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Per-session gate: send each fresh visit through the onboarding once
+       (welcome.html sets `seen_intro` in sessionStorage on finish). Runs before
+       any paint so the main site never flashes. A new browser/tab session
+       replays the intro; subpage back-links within the same session skip it. -->
+  <script>
+    try {
+      if (!sessionStorage.getItem('seen_intro')) {
+        location.replace('welcome.html' + location.search + location.hash);
+      }
+    } catch (e) {}
+  </script>
+
+  <title>Aislinn Yang · still figuring it out</title>
+  <meta name="description" content="Aislinn (Yixin) Yang, growth & AI person working around AI startups, GTM, search, and content. A small site about work, internet holes, cooking, and figuring out what kind of life I want to build.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Social share card (Open Graph + Twitter) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aislinnyang.com/">
+  <meta property="og:title" content="Aislinn Yang · still figuring it out">
+  <meta property="og:description" content="Growth & AI, GTM, search, cooking, and a very public attempt at figuring it out. 🌻">
+  <meta property="og:image" content="https://aislinnyang.com/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aislinn Yang · still figuring it out">
+  <meta name="twitter:description" content="Growth & AI, GTM, search, cooking, and a very public attempt at figuring it out. 🌻">
+  <meta name="twitter:image" content="https://aislinnyang.com/assets/og-card.png">
+
+  <!-- Google Analytics 4 - replace G-XXXXXXXXXX with your real Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=35">
+</head>
+<body>
+
+<!-- ── Cursor ──────────────────────────────────────────────── -->
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<!-- The treasure-dig onboarding now lives on its own page (welcome.html /
+     welcome.js); first-time visitors are routed there by the gate in <head>. -->
+
+<!-- ── Heliotrope: the growing stem (left spine) ───────────── -->
+<div class="spine" aria-hidden="true">
+  <div class="spine-track"></div>
+  <div class="spine-fill" id="spine-fill"></div>
+</div>
+
+<!-- ── Heliotrope: the sunflower that turns toward you ──────── -->
+<button class="sunflower" id="sunflower" aria-label="A sunflower. Click it." title="🌻">
+  <svg viewBox="0 0 100 100" width="100" height="100">
+    <g class="sf-head" id="sf-head">
+      <g class="sf-petals">
+        <!-- 12 petals, generated around the center -->
+        <ellipse class="sf-petal" cx="50" cy="22" rx="6.5" ry="15"/>
+        <ellipse class="sf-petal" cx="50" cy="22" rx="6.5" ry="15" transform="rotate(30 50 50)"/>
+        <ellipse class="sf-petal" cx="50" cy="22" rx="6.5" ry="15" transform="rotate(60 50 50)"/>
+        <ellipse class="sf-petal" cx="50" cy="22" rx="6.5" ry="15" transform="rotate(90 50 50)"/>
+        <ellipse class="sf-petal" cx="50" cy="22" rx="6.5" ry="15" transform="rotate(120 50 50)"/>
+        <ellipse class="sf-petal" cx="50" cy="22" rx="6.5" ry="15" transform="rotate(150 50 50)"/>
+        <ellipse class="sf-petal" cx="50" cy="22" rx="6.5" ry="15" transform="rotate(180 50 50)"/>
+        <ellipse class="sf-petal" cx="50" cy="22" rx="6.5" ry="15" transform="rotate(210 50 50)"/>
+        <ellipse class="sf-petal" cx="50" cy="22" rx="6.5" ry="15" transform="rotate(240 50 50)"/>
+        <ellipse class="sf-petal" cx="50" cy="22" rx="6.5" ry="15" transform="rotate(270 50 50)"/>
+        <ellipse class="sf-petal" cx="50" cy="22" rx="6.5" ry="15" transform="rotate(300 50 50)"/>
+        <ellipse class="sf-petal" cx="50" cy="22" rx="6.5" ry="15" transform="rotate(330 50 50)"/>
+      </g>
+      <circle class="sf-center" cx="50" cy="50" r="15"/>
+    </g>
+  </svg>
+</button>
+
+<!-- ══════════════════════════════════════════════════════════
+     MAIN SITE
+     ══════════════════════════════════════════════════════════ -->
+<div id="main-site">
+
+  <!-- Nav -->
+  <nav id="navbar">
+    <a href="#hello" class="nav-logo">Aislinn 🌻</a>
+    <div class="nav-links">
+      <a href="#now">Now</a>
+      <a href="#think">Career</a>
+      <a href="#open">Projects</a>
+      <a href="cooking.html">Cooking</a>
+      <a href="#journey">Story</a>
+      <button class="nav-cta nav-cta--cv" onclick="openResumeModal('zh')">CV ↗</button>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile drawer -->
+  <div class="nav-drawer" id="nav-drawer">
+    <a href="#now" class="drawer-link">Now</a>
+    <a href="#think" class="drawer-link">Career</a>
+    <a href="#journey" class="drawer-link">Story</a>
+    <a href="#exploring" class="drawer-link">Curious</a>
+    <a href="#open" class="drawer-link">Projects</a>
+    <a href="cooking.html" class="drawer-link">Cooking</a>
+    <a href="#life" class="drawer-link">Life</a>
+    <button class="drawer-link drawer-cta" onclick="openResumeModal('zh')">CV ↗</button>
+    <a href="mailto:bhyzsx@gmail.com" class="drawer-link drawer-cta">Say hi</a>
+  </div>
+
+  <!-- ── Hello / Hero ──────────────────────────────────────── -->
+  <section id="hello">
+    <div class="hero-light" aria-hidden="true"></div>
+    <div class="hero-grid">
+      <div class="hero-text fade-in">
+        <h1 class="hero-name">Hi, I'm <span>Aislinn 🌻</span></h1>
+        <p class="hero-intro">
+          I do GTM for <span class="no-break">AI products</span>, mostly
+          <span class="no-break">SEO and GEO</span>. Whatever it takes to get one growing, really.
+          I work fast, usually in public, and build most of my own tools.
+        </p>
+        <p class="hero-life">
+          Outside work I cook constantly 🥘, take long walks to think 🚶, read more geopolitics than is
+          healthy 🌍, and have strong opinions about milk tea 🧋.
+        </p>
+        <div class="hero-btns">
+          <button class="btn btn-primary" onclick="document.getElementById('now').scrollIntoView({behavior:'smooth'})">Read ↓</button>
+          <button class="btn btn-outline" onclick="openResumeModal('zh')">My CV</button>
+          <a class="btn btn-ghost" href="mailto:bhyzsx@gmail.com">Say hi</a>
+        </div>
+      </div>
+      <div class="hero-photo fade-in" style="transition-delay:0.15s">
+        <div class="flip-card" id="hero-flip" onclick="this.classList.toggle('flipped')">
+          <div class="flip-front">
+            <picture>
+              <source srcset="assets/pixel-laugh.webp" type="image/webp">
+              <img src="assets/pixel-laugh.png" alt="Aislinn, in pixels" width="800" height="800">
+            </picture>
+          </div>
+          <div class="flip-back">
+            <picture>
+              <source srcset="assets/laugh.webp" type="image/webp">
+              <img src="assets/laugh.jpg" alt="Aislinn, laughing" width="1308" height="1400">
+            </picture>
+          </div>
+        </div>
+        <p class="flip-hint">both sides of me · click to flip ↺</p>
+      </div>
+    </div>
+    <p class="scroll-cue fade-in">keep going ↓</p>
+  </section>
+
+  <!-- ── 01 · Now ──────────────────────────────────────────── -->
+  <section id="now">
+    <div class="now-card fade-in">
+      <p class="section-label">01</p>
+      <h2 class="essay-title">Now</h2>
+      <ul class="now-list">
+        <li>Finishing my <strong>M.Sc. at ESCP</strong>, graduating Dec 2026.</li>
+        <li>Working on <strong>ShiftFlow</strong>'s organic growth, mostly across SEO, content, and search-driven acquisition.</li>
+        <li>Writing on Rednote (<strong>@苏西Aislinn</strong>) about <span class="no-break">AI startups</span>, growth, SEO, and what I'm learning from real projects.</li>
+        <li>After graduation, I'm looking for a <strong class="no-break">GTM role</strong> at an <span class="no-break">AI startup</span> where I can stay close to product and users.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── 02 · Career path ─────────────────────────────────────── -->
+  <section id="think">
+    <div class="essay fade-in">
+      <header class="essay-head">
+        <p class="section-label">02</p>
+        <h2 class="essay-title">Work so far</h2>
+        <p class="essay-lede">Mostly AI, growth, search, and the hands-on work of getting a product in front of the right people.</p>
+      </header>
+
+      <ol class="ledger">
+        <li class="led-row">
+          <span class="led-when">2025.11 <span class="led-sep">·</span> now</span>
+          <span class="led-what"><span class="led-org">ShiftFlow</span><span class="led-role">Growth Marketer · part-time</span></span>
+        </li>
+        <li class="led-row">
+          <span class="led-when">2025.09 <span class="led-sep">·</span> 2025.11</span>
+          <span class="led-what"><span class="led-org">Picsi.Ai</span><span class="led-role">SEO / GEO Growth · part-time</span></span>
+        </li>
+        <li class="led-row">
+          <span class="led-when">2025.08 <span class="led-sep">·</span> now</span>
+          <span class="led-what"><span class="led-org">Rednote <span class="led-zh">@苏西Aislinn🌻</span> &amp; GTM Works</span><span class="led-role">Creator &amp; AI Growth Writer</span></span>
+        </li>
+        <li class="led-row">
+          <span class="led-when">2025.06 <span class="led-sep">·</span> 2025.09</span>
+          <span class="led-what"><span class="led-org">Duizhun</span><span class="led-role">SEO Intern</span></span>
+        </li>
+        <li class="led-row">
+          <span class="led-when">2025.01 <span class="led-sep">·</span> 2025.04</span>
+          <span class="led-what"><span class="led-org">Duiniu Tanqin <span class="led-place">Beijing</span></span><span class="led-role">Overseas Social Intern</span></span>
+        </li>
+        <li class="led-row">
+          <span class="led-when">2024.05 <span class="led-sep">·</span> 2024.11</span>
+          <span class="led-what"><span class="led-org">Chenfeng Qingxing <span class="led-place">Hangzhou</span></span><span class="led-role">Product &amp; Growth Intern</span></span>
+        </li>
+        <li class="led-row">
+          <span class="led-when">2024.02 <span class="led-sep">·</span> 2024.07</span>
+          <span class="led-what"><span class="led-org">OpenFlow AI</span><span class="led-role">Growth Intern</span></span>
+        </li>
+        <li class="led-row">
+          <span class="led-when">2023.08 <span class="led-sep">·</span> 2024.01</span>
+          <span class="led-what"><span class="led-org">Chenfeng Qingxing <span class="led-place">Hangzhou</span></span><span class="led-role">Product &amp; Growth Intern</span></span>
+        </li>
+        <li class="led-row">
+          <span class="led-when">2023.02 <span class="led-sep">·</span> now</span>
+          <span class="led-what"><span class="led-org">RW Lab</span><span class="led-role">Core Builder &amp; Media Lead</span></span>
+        </li>
+        <li class="led-row">
+          <span class="led-when">2022.01 <span class="led-sep">·</span> 2022.02</span>
+          <span class="led-what"><span class="led-org">Jiujiang Daily</span><span class="led-role">Social-news Intern</span></span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ── 03 · My story ─────────────────────────────────────── -->
+  <section id="journey">
+    <div class="fade-in">
+      <header class="essay-head">
+        <p class="section-label">03</p>
+        <h2 class="essay-title">How I got here</h2>
+      </header>
+
+      <div class="story-preview">
+        <p>I grew up in a small city in Jiangxi and did the very normal student route for eighteen
+        years: school, exams, repeat. No cinematic prodigy arc, sadly. The main plot was that I was
+        nosy in a useful way. I wanted to know how successful people thought, what other lives looked
+        like, and what existed outside the tiny map I had been given.</p>
+        <p>Then I moved to Hangzhou for university and the map got bigger very quickly. During
+        sophomore year I found RW Lab by accident, which introduced me to Web3, digital nomads,
+        startups, and people building things just because they could. Up to that point, most of my
+        learning came from syllabuses. RW was the first place where learning felt like wandering into
+        a room I actually wanted to stay in.</p>
+      </div>
+      <div class="story-unlock">
+        <a href="about.html" class="story-unlock-btn">Read the whole thing &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 04 · Exploring ────────────────────────────────────── -->
+  <section id="exploring">
+    <div class="fade-in">
+      <header class="essay-head">
+        <p class="section-label">04</p>
+        <h2 class="essay-title">What I'm curious about</h2>
+        <p class="essay-lede">Things I keep coming back to, even when I was supposed to be doing something else.</p>
+      </header>
+
+      <p class="explore-grow">I gave them sunflower stages because some interests are still tiny
+      sprouts, and some have fully taken over my brain. Move your cursor across them.</p>
+
+      <div class="garden">
+        <div class="garden-field" id="garden-field"
+             aria-label="A garden of curiosities, each at a different stage of growth"></div>
+        <p class="garden-readout" id="garden-readout" aria-live="polite">
+          <span class="gr-rest">Hover a flower to see where I am with it 🌱</span>
+        </p>
+        <ul class="garden-legend" aria-hidden="true">
+          <li><span class="lg-dot lg-seed"></span>just planted</li>
+          <li><span class="lg-dot lg-sprout"></span>sprouting</li>
+          <li><span class="lg-dot lg-bud"></span>budding</li>
+          <li><span class="lg-dot lg-bloom"></span>in bloom</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 05 · My projects (writing + building) ──────────────── -->
+  <section id="open">
+    <div class="fade-in">
+      <header class="essay-head">
+        <p class="section-label">05</p>
+        <h2 class="essay-title">Things I've made public</h2>
+        <p class="essay-lede">Writing, tiny builds, and a few internet artifacts from me trying to
+        learn by making things slightly too public.</p>
+      </header>
+
+      <div class="open-filter" id="open-filter"></div>
+      <div class="open-grid" id="open-grid"></div>
+    </div>
+  </section>
+
+  <!-- ── 06 · Off the clock ────────────────────────────────── -->
+  <section id="life">
+    <div class="life-grid fade-in">
+      <div class="life-text">
+        <header class="essay-head">
+          <p class="section-label">06</p>
+          <h2 class="essay-title">Life lately</h2>
+        </header>
+        <p class="essay-main-p">The non-work bits that make me feel like a person and not just a
+        browser with too many tabs open.</p>
+
+        <ul class="life-notes">
+          <li>
+            <span class="life-note-emoji" aria-hidden="true">🥗</span>
+            <p>Cooking simple, healthy-ish meals, mostly because feeding myself well makes
+            everything else easier. <a href="cooking.html">Open the cooking wall →</a></p>
+          </li>
+          <li>
+            <span class="life-note-emoji" aria-hidden="true">🚶</span>
+            <p>Walking a lot. It is still my best thinking tool, especially when I
+            pretend I am just getting coffee.</p>
+          </li>
+          <li>
+            <span class="life-note-emoji" aria-hidden="true">🌍</span>
+            <p>Following international politics more than is emotionally reasonable, usually
+            through newsletters, long reads, and too many tabs.</p>
+          </li>
+          <li>
+            <span class="life-note-emoji" aria-hidden="true">🎧</span>
+            <p>Listening to a lot of <span class="no-break">R&amp;B</span>. Recently: <span class="no-break">Gareth T.</span> Forever favorite:
+            <span class="no-break">Khalil Fong.</span></p>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 07 · Becoming (closing) ───────────────────────────── -->
+  <section id="becoming">
+    <div class="becoming-inner fade-in">
+      <div class="hero-light becoming-light" aria-hidden="true"></div>
+      <p class="section-label">07</p>
+      <h2 class="becoming-title">If any of this feels familiar...</h2>
+      <div class="becoming-copy">
+        <p class="becoming-note">Maybe you're building something, trying to get people to care,
+        overthinking your next move, or just also believe a good walk can fix 37% of a problem.</p>
+        <p class="becoming-note becoming-note--soft">I like people who are curious, direct, kind,
+        and a little obsessed with what they're building. If that sounds like you, say hi.</p>
+      </div>
+      <a href="mailto:bhyzsx@gmail.com" class="contact-email">bhyzsx@gmail.com <span>→</span></a>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/yixin-yang-5a7802296" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.xiaohongshu.com" target="_blank" rel="noopener">Rednote @苏西Aislinn</a>
+        <a href="https://x.com/aislinnyang" target="_blank" rel="noopener">X @aislinnyang</a>
+      </div>
+      <p class="bloom-hint">p.s. type <kbd class="kbd-bloom" onclick="bloomEverything()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();bloomEverything();}" role="button" tabindex="0" aria-label="Make the page bloom">bloom</kbd> anywhere, and watch 🌻</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>aislinnyang.com</p>
+    <p>🌻 still figuring it out · built by hand</p>
+    <p class="footer-cv">need the receipts? <button class="link-btn" onclick="openResumeModal('zh')">my CV →</button></p>
+  </footer>
+
+</div><!-- /main-site -->
+
+
+<!-- ── Resume Modal ───────────────────────────────────────── -->
+<div id="resume-modal" onclick="if(event.target===this) closeResumeModal()">
+  <div class="rm-inner">
+    <div class="rm-header">
+      <h3>CV · Yixin (Aislinn) Yang</h3>
+      <div class="rm-lang" role="tablist" aria-label="CV language">
+        <button class="rm-lang-btn" data-lang="zh" onclick="setResumeLang('zh')" role="tab">中文</button>
+        <button class="rm-lang-btn" data-lang="en" onclick="setResumeLang('en')" role="tab">English</button>
+      </div>
+      <a id="rm-dl" href="assets/resume-zh.pdf" download class="btn btn-primary" style="font-size:0.78rem;padding:0.55rem 1.3rem;text-decoration:none;">Download ↓</a>
+      <button class="rm-close btn" onclick="closeResumeModal()">✕</button>
+    </div>
+    <iframe id="res-iframe" src="assets/resume-zh.pdf" title="CV preview"></iframe>
+    <div id="res-soon" class="rm-soon" hidden>
+      <div class="rm-soon-sun">🌻</div>
+      <p class="rm-soon-title">English CV, coming soon.</p>
+      <p class="rm-soon-sub">Still polishing the English version. Want it now?
+        <a href="mailto:bhyzsx@gmail.com">Email me</a> and I'll send it straight over.</p>
+    </div>
+    <div class="rm-footer">
+      <button class="btn btn-outline" onclick="closeResumeModal()" style="font-size:0.78rem;padding:0.55rem 1.2rem;">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── Post reader modal (copied-in posts) ─────────────────── -->
+<div id="post-modal" onclick="if(event.target===this) closePostModal()">
+  <div class="pm-inner">
+    <button class="pm-close" onclick="closePostModal()" aria-label="Close">✕</button>
+    <a class="pm-corner" target="_blank" rel="noopener"><span class="pm-corner-label"></span><span class="pm-corner-arrow">↗</span></a>
+    <article class="pm-article">
+      <div class="pm-lang" role="tablist" aria-label="Language" hidden>
+        <button class="pm-lang-btn" data-lang="en" onclick="setPostLang('en')" role="tab">EN</button>
+        <button class="pm-lang-btn" data-lang="zh" onclick="setPostLang('zh')" role="tab">中文</button>
+      </div>
+      <p class="pm-source"></p>
+      <h2 class="pm-title"></h2>
+      <div class="pm-body"></div>
+    </article>
+  </div>
+</div>
+
+<script src="script.js?v=32"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aislinn Yang · meals I've cooked</title>
+  <meta name="description" content="A very incomplete record of things I've cooked: a pasta era, open sandwiches, foil packets, frozen veg, and an undying love of peanut butter.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Social share -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://aislinnyang.com/cooking">
+  <meta property="og:title" content="Aislinn Yang · meals I've cooked">
+  <meta property="og:description" content="A very incomplete record of things I've cooked. Only the photogenic ones made it 😊">
+  <meta property="og:image" content="https://aislinnyang.com/assets/og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aislinn Yang · meals I've cooked">
+  <meta name="twitter:description" content="Only the photogenic ones made it 😊">
+  <meta name="twitter:image" content="https://aislinnyang.com/assets/og-card.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&family=Caveat:wght@500;600&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=35">
+</head>
+<body class="story">
+
+  <!-- reading progress -->
+  <div class="story-progress" aria-hidden="true"><div class="story-progress-fill" id="story-progress-fill"></div></div>
+
+  <!-- top bar -->
+  <header class="story-nav">
+    <a href="index.html" class="story-back">← Aislinn 🌻</a>
+    <a href="mailto:bhyzsx@gmail.com" class="story-say-hi">Say hi</a>
+  </header>
+
+  <article class="story-article">
+
+    <header class="story-hero">
+      <p class="story-eyebrow">Off the clock · the kitchen</p>
+      <h1 class="story-title">A (very incomplete) record of things I've cooked</h1>
+      <p class="story-sub">only the photogenic ones made it 😊</p>
+    </header>
+
+    <p>Not a full log: I only counted the ones worth photographing. Which, given that I have the camera
+    skills of a potato AND I'm always way too hungry to bother with plating, garnishing, lighting
+    setups, finding angles, or any of that, yeah, the bar was low. Bear with me.</p>
+
+    <p>End of last year was a whole pasta era. Bolognese, béchamel, Korean gochujang, sesame. Plus a
+    load of tomato-based rice dishes: braised pork, seafood rice, tomato chicken, braised chicken
+    thighs.</p>
+
+    <p>This year I've completely fallen down the open sandwich rabbit hole. Baguette, ciabatta,
+    wholemeal. Load it up with chicken, tuna, avocado or a fried egg, then finish with whatever cheese
+    I have: cheddar, gouda, burrata, ricotta, fresh mozzarella, cottage cheese. Handful of salad leaves
+    if I can be bothered.</p>
+
+    <p>Recently I've also been obsessed with foil packet meals: veggies, fish, prawns, all wrapped up
+    and bunged in the oven together. Throw in some apple or orange slices for a bit of sweetness.
+    Genuinely so good.</p>
+
+    <p>Unphotographed honourable mentions: stir-fried noodles, egg fried rice, one attempt at homemade
+    pasta, pumpkin pancakes, and a burger patty that was, frankly, a disaster..</p>
+
+    <p>Two recipes that actually surprised me lately: a slow-roasted chicken breast I sort of winged,
+    and a red bean milk soup I'd been craving for months, finally tracked down adzuki beans in Valencia
+    and made it happen.</p>
+
+    <p>Day-to-day though, it's sandwiches. The laziest version: supermarket ham + bread + salami + a
+    slice of cheese, straight in the oven. Done.</p>
+
+    <p>Massive shoutout to frozen veg as well. Frozen broccoli, onions, garlic, peppers, green beans,
+    and frozen blueberries for the vitamins. Bit of black pepper and chilli flakes, five minutes in the
+    microwave, sorted. Only gripe: why is there no leafy greens here 😭 I just want some bok choy.</p>
+
+    <p>Last thing: peanut butter + chocolate spread + bread is genuinely one of the greatest
+    combinations ever invented. How is peanut butter that good???</p>
+
+  </article>
+
+  <!-- ── The polaroid board: meals as tilted prints on warm paper ── -->
+  <section class="wall-wrap" aria-label="A board of meals I've cooked">
+    <div class="board-panel">
+      <div class="board" id="wall"></div>
+    </div>
+    <p class="wall-hint">pinned up like polaroids · tap any to open · ~68 meals, zero plating skills 😄</p>
+  </section>
+
+  <article class="story-article story-coda-wrap">
+    <footer class="story-coda">
+      <p>That's the menu. Mostly sandwiches, honestly.</p>
+      <a href="index.html" class="story-back-big">← back to the rest of me 🌻</a>
+    </footer>
+  </article>
+
+  <script>
+    (function () {
+      var fill = document.getElementById('story-progress-fill');
+      function update() {
+        var el = document.documentElement;
+        var max = el.scrollHeight - el.clientHeight;
+        var p = max > 0 ? (window.scrollY || el.scrollTop) / max : 0;
+        fill.style.width = (Math.min(1, Math.max(0, p)) * 100).toFixed(1) + '%';
+      }
+      document.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      update();
+    })();
+
+    // ── The polaroid board: tilted prints on warm paper, tap to open ──
+    (function () {
+      var DATA = ["001","002","003","006","008","010","011","012","013","014","015","016","017","022","023","024","025","026","029","031","032","033","034","035","036","037","038","039","040","041","043","045","046","047","048","050","051","052","053","054","055","056","057","058","059","060","061","065","068","069","070","071","072","075","076","077","078","082","083","084","085","086","092","096","097","098","099","100"];
+      var wall = document.getElementById('wall');
+      if (!wall) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // A few handwritten notes, keyed by photo id (they travel with the photo
+      // even though order is shuffled). EDIT ME: swap in real dish names.
+      // The captioned ones also get a little strip of washi tape.
+      var CAPTIONS = {
+        "059": "starving by now 😋",
+        "036": "sandwich era",
+        "075": "10/10 would remake",
+        "012": "the good ones 🌻"
+      };
+      var ROT = [-4, -2, 3, 1.5, -1.5, 2.5, 4, -3, 2, -2.5];
+
+      // shuffle for a slightly different pile each visit
+      for (var i = DATA.length - 1; i > 0; i--) { var j = (Math.random()*(i+1))|0; var t=DATA[i]; DATA[i]=DATA[j]; DATA[j]=t; }
+
+      var items = [];
+      DATA.forEach(function (id, idx) {
+        var rot = ROT[idx % ROT.length];
+        var a = document.createElement('a');
+        a.className = 'polaroid';
+        a.href = 'assets/cooking/food-' + id + '.avif';
+        a.setAttribute('aria-label', 'A meal I cooked');
+        a.style.setProperty('--r', rot + 'deg');
+        var img = document.createElement('img');
+        img.loading = 'lazy'; img.decoding = 'async'; img.alt = ''; img.draggable = false;
+        img.src = 'assets/cooking/snaps/food-' + id + '.webp';
+        a.appendChild(img);
+        var cap = CAPTIONS[id];
+        if (cap) {
+          a.classList.add('tape');
+          a.style.setProperty('--tr', (rot < 0 ? 4 : -4) + 'deg');
+          var c = document.createElement('span');
+          c.className = 'cap'; c.textContent = cap;
+          a.appendChild(c);
+        }
+        wall.appendChild(a);
+        items.push(a);
+      });
+
+      // staggered reveal on scroll-in
+      if (reduce) {
+        items.forEach(function (a) { a.classList.add('seen'); });
+      } else {
+        var io = new IntersectionObserver(function (ents) {
+          ents.forEach(function (e) {
+            if (!e.isIntersecting) return;
+            var a = e.target;
+            a.style.transitionDelay = ((items.indexOf(a) % 5) * 0.05).toFixed(2) + 's';
+            a.classList.add('seen');
+            io.unobserve(a);
+          });
+        }, { threshold: 0.06, rootMargin: '0px 0px -5% 0px' });
+        items.forEach(function (a) { io.observe(a); });
+      }
+
+      // tap / click to open the full photo
+      items.forEach(function (a) {
+        a.addEventListener('click', function (e) { e.preventDefault(); openB(a.getAttribute('href')); });
+      });
+
+      var box = document.createElement('div'); box.className = 'lbox'; box.setAttribute('hidden', '');
+      box.innerHTML = '<button class="lbox-x" aria-label="Close">✕</button><img alt="">';
+      document.body.appendChild(box);
+      var lImg = box.querySelector('img');
+      function openB(src){ lImg.src = src; box.removeAttribute('hidden'); document.body.style.overflow = 'hidden'; }
+      function closeB(){ box.setAttribute('hidden', ''); lImg.removeAttribute('src'); document.body.style.overflow = ''; }
+      box.addEventListener('click', closeB);
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeB(); });
+    })();
+  </script>
+
+</body>
+</html>

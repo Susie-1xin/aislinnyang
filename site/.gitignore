@@ -1,0 +1,21 @@
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
+
+# macOS
+.DS_Store
+
+# local image backups (not for deploy)
+_originals/
+
+# Rednote post sources (kept local, not deployed)
+posts/
+
+# image cutout venv (local only)
+.venv-cut/
+assets/cooking/_stickers_old_backup/
+assets/cooking/_removed_backup/
+assets/cooking/_unused_backup/
