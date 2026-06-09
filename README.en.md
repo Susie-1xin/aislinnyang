@@ -2,7 +2,7 @@
 
 # 🌻 aislinnyang.com
 
-**I do growth for AI products. This is my personal site and the tools I use every day, open-sourced.**
+**Personal site source · plus the Agent Skills I use every day**
 
 [![Live](https://img.shields.io/badge/live-aislinnyang.com-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://aislinnyang.com)
 [![Built with Claude Code](https://img.shields.io/badge/built%20with-Claude%20Code-D97757?style=flat-square&logo=anthropic&logoColor=white)](https://claude.com/claude-code)
@@ -14,9 +14,11 @@
 
 </div>
 
-> The site isn't an achievement showcase. It tries to answer one question: **what is this person actually like, in real life and at work?** How she thinks, what she's building, what she's overthinking, what kind of life she's trying to build.
+> I'm Susie, also Aislinn. Two years in AI product growth, with a soft spot for GTM, SEO/GEO, and zero-to-one launches. I've worked on AI music, video, and virtual-companion products, on both the brand side and the agency side.
+>
+> This is my vibe-coded personal site. It holds the essence of my thinking (it does not, but you're welcome to read 🌻).
 
-I do growth, not product engineering, but I build most of the tools I need myself, vibe-coded with Claude Code. This site (`site/`) is one of them: hand-written HTML / CSS / JS on Cloudflare Pages. The part I actually want to share is `skills/`, the Agent Skills I reach for every day to do growth.
+Two things live here: the site source in `site/`, and the Agent Skills I use every day to do growth in `skills/`.
 
 ## Layout
 
