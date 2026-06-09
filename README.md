@@ -2,7 +2,7 @@
 
 # 🌻 aislinnyang.com
 
-**一个做 AI 产品增长的人，顺手开源的个人网站 + 日常在用的 Agent Skills**
+**我做 AI 产品增长，顺手把个人网站和日常在用的工具开源了。**
 
 [![Live](https://img.shields.io/badge/live-aislinnyang.com-F38020?style=flat-square&logo=cloudflare&logoColor=white)](https://aislinnyang.com)
 [![Built with Claude Code](https://img.shields.io/badge/built%20with-Claude%20Code-D97757?style=flat-square&logo=anthropic&logoColor=white)](https://claude.com/claude-code)
@@ -16,7 +16,7 @@
 
 > 网站不是一个成就展示页。它想回答的是：**这个人在生活里、在工作中，到底是什么样子。** 怎么想事情、在做什么、在纠结什么、想过成什么样的生活。
 
-我不是工程师，是做增长的。这个站纯手写 HTML / CSS / JS，靠 Claude Code "vibe coding" 糊出来、丢在 Cloudflare Pages 上，能跑就行。真正想分享的是 `skills/` 里那些我天天用来做增长的小工具。
+我做增长，不写产品代码，但要用的工具基本自己动手，用 Claude Code "vibe" 出来。这个网站（`site/`）就是这么来的：纯手写 HTML / CSS / JS，丢在 Cloudflare Pages 上。而我最想分享的是 `skills/`，我每天真正拿来做增长的那些 Agent Skills。
 
 ## 目录结构
 
